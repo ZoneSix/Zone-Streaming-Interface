@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+html, body {
+  font-family: monospace;
+  color: #0ff;
+  height: 100%;
+}
+
+body {
+  /*background-color: rgba(0, 0, 0, 0);*/
+  background-color: #000;
+  overflow: hidden;
+  line-height: 1;
+}
+
+.zfv-box {
+  position: relative;
+  padding: 1px 3px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  box-sizing: border-box;
+
+  border-color: #00ffff;
+  background: repeating-linear-gradient(
+	  0deg,
+	  #002222,
+	  #002222 1px,
+	  rgba(0, 255, 255, 0.1) 1px,
+	  rgba(0, 255, 255, 0.1) 2px
+	);
+}
+
+.zfv-box.zfv-2 {
+  border-left: 2px solid;
+  border-right: 2px solid;
+  border-top: 0;
+  border-bottom: 0;
+  padding: 3px 12px;
+}
+
+.zfv-box::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  border-left: 2px solid;
+  border-right: 2px solid;
+
+  border-color: #00ffff;
+}
+
+.zfv-box.zfv-2::after {
+  width: 10px;
+  height: 100%;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-left: 0;
+  border-right: 0;
+  top: 0;
+}
+
+.zfv-box::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  top: 0;
+  left: 0;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  box-sizing: border-box;
+
+  border-color: #00ffff;
+}
+
+.zfv-box.zfv-2::before {
+  width: 10px;
+  height: 100%;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-left: 0;
+  border-right: 0;
+  left: initial;
+  right: 0;
+}
+
+.zfv-box > .title {
+  font-size: 11px;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 68px;
+  height: 68px;
+}
+
+.logo-box .logo {
+  width: 64px;
+  height: 64px;
+  background: repeating-linear-gradient(
+	  0deg,
+	  transparent,
+	  transparent 1px,
+	  #00ffff 1px,
+	  #00ffff 2px
+	);
+  -webkit-mask: url('logo_black.svg') center/64px no-repeat;
+  mask: url('logo_black.svg') center/64px no-repeat;
+  background-size: 64px 64px;
+}
+
+.chat-box {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 200px;
+}
+
+.vinyl {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  left: -46px;
+  bottom: -46px;
+  animation-name: spin;
+  animation-duration: 1.82s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: running;
+  animation-direction: normal;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.follower-box {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 78px;
+  height: 68px;
+  overflow: hidden;
+}
+
+.follower-box .follower-inner {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 100%;
+  transition: 1s;
+}
+
+.follower-box .follower-title {
+  text-align: right;
+  font-size: 14px;
+}
+
+.follower-box .follower-name {
+  font-size: 18px;
+  text-align: right;
+}
